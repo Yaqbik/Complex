@@ -46,7 +46,8 @@ class Complex(object):
 
 
 
-class TextComplex(unittest.TestCase):
+
+class TestComplex(unittest.TestCase):
 
     def test_mul(self):
         a = Complex(6.0, 5.0)
@@ -54,3 +55,33 @@ class TextComplex(unittest.TestCase):
         c = a * b
         self.assertEqual(a.real*b.real - a.imag*b.imag, c.real, "multiplication real")
         self.assertEqual(a.imag*b.real + a.real*b.imag, c.imag, "multiplication real")
+
+
+    def test_add(self):
+        a = Complex(2, 5)
+        b = Complex(5, 3)
+        c = a + b
+        self.assertEqual(a.real + b.real, c.real, "addition real")
+        self.assertEqual(a.imag + b.imag, c.imag, "addition imaginary")
+    def test_sub(self):
+        a = Complex(8, 2)
+        b = Complex(5, 6)
+        c = a - b
+        self.assertEqual(a.real - b.real, c.real, "addition real")
+        self.assertEqual(a.imag - b.imag, c.imag, "addition imaginary")
+    
+def main():
+    a = Complex(-3.0, 2.0)
+    b = Complex(0.0, 5.0)
+    c = Complex(0.0, -5.0)
+    d = Complex(4.0, 5.0)
+    e = Complex(-10.0, -5.0)
+    f = a + b
+    g = b - d
+    h = c*e
+    print("%s" %(f))
+    print("%s" %(g))
+    print("%s" %(h))
+if __name__ == '__main__':
+    main()
+
