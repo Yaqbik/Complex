@@ -49,7 +49,13 @@ class TextComplex(unittest.TestCase):
         c = a + b
         self.assertEqual(a.real + b.real, c.real, "addition real")
         self.assertEqual(a.imag + b.imag, c.imag, "addition imaginary")
-
+    def test_sub(self):
+        a = ComplexNumber(8, 2)
+        b = ComplexNumber(5, 6)
+        c = a - b
+        self.assertEqual(a.real - b.real, c.real, "addition real")
+        self.assertEqual(a.imag - b.imag, c.imag, "addition imaginary")
+    
 def main():
     a = Complex(-3.0, 2.0)
     b = Complex(0.0, 5.0)
