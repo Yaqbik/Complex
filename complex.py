@@ -43,7 +43,20 @@ class Complex(object):
         raise NotImplementedError \
             ('self**power is not yet impl. for Complex')
 
-class TextComplex(unittest.TestCase):
+
+
+
+
+class TestComplex(unittest.TestCase):
+
+    def test_mul(self):
+        a = Complex(6.0, 5.0)
+        b = Complex(1.0, 1.0)
+        c = a * b
+        self.assertEqual(a.real*b.real - a.imag*b.imag, c.real, "multiplication real")
+        self.assertEqual(a.imag*b.real + a.real*b.imag, c.imag, "multiplication real")
+
+
     def test_add(self):
         a = Complex(2, 5)
         b = Complex(5, 3)
@@ -71,3 +84,4 @@ def main():
     print("%s" %(h))
 if __name__ == '__main__':
     main()
+
