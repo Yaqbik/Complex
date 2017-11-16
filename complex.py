@@ -1,3 +1,4 @@
+import unittest
 
 class Complex(object):
     def __init__(self, real, imag=0.0):
@@ -44,14 +45,14 @@ class Complex(object):
 
 class TextComplex(unittest.TestCase):
     def test_add(self):
-        a = ComplexNumber(2, 5)
-        b = ComplexNumber(5, 3)
+        a = Complex(2, 5)
+        b = Complex(5, 3)
         c = a + b
         self.assertEqual(a.real + b.real, c.real, "addition real")
         self.assertEqual(a.imag + b.imag, c.imag, "addition imaginary")
     def test_sub(self):
-        a = ComplexNumber(8, 2)
-        b = ComplexNumber(5, 6)
+        a = Complex(8, 2)
+        b = Complex(5, 6)
         c = a - b
         self.assertEqual(a.real - b.real, c.real, "addition real")
         self.assertEqual(a.imag - b.imag, c.imag, "addition imaginary")
